@@ -94,6 +94,14 @@ body {
     margin: 0 auto;
 }
 
+.products_item img {
+    display: none;
+}
+
+.products_item .img_active {
+    display: inline-block;
+}
+
 /*first_block
 ------------------------------------------------------------------------------*/
 .first_block {
@@ -223,6 +231,57 @@ input[type="button"] {
     border: none;
     background: transparent;
     background-image: url("img/play_btn.png");
+}
+
+/*popup---------------------------------------------------------------------*/
+button.selected {
+    z-index: 100;
+}
+
+.messagepop {
+    background-color: #fff;
+    cursor: default;
+    display: none;
+    text-align: left;
+    z-index: 50;
+    padding: 25px 25px 20px;
+    width: 60%;
+    top: 7%;
+    left: 20%;
+    position: fixed;
+}
+
+#new_message p:first-of-type {
+    display: flex;
+    justify-content: space-between;
+}
+
+#new_message .name, #new_message .touch_mail {
+    width: 49%;
+}
+
+#new_message textarea {
+    width: 100%;
+}
+
+.submit_btn {
+    width: 100%;
+
+}
+
+.close {
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    color: #C4C0B1;
+    font-size: 30px;
+    background: transparent;
+
+}
+
+.close:hover {
+    color: #ff2d2d;
+    cursor: pointer;
 }
 
 /* end organaisation
@@ -355,21 +414,30 @@ input[type="button"] {
 
 .nav_products_item:hover {
     color: #ff2d2d;
+    cursor: pointer;
 }
 
 .active_color {
     color: #ff2d2d;
 }
 
+.products_item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
 .products_line > img {
-    margin-right: 15px;
+    margin-right: 10px;
     margin-bottom: 10px;
     height: 294px;
     width: 298px;
 }
 
-.products_line > img:nth-of-type(4), .products_line > img:last-of-type {
-    margin-right: 0;
+.addflex {
+    display: flex;
+    justify-content: center;
 }
 
 /* end products
@@ -659,21 +727,8 @@ textarea {
         width: 100%;
     }
 
-    .products_line {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 96%;
-        margin: 0 auto;
-    }
-
     .products_line > img {
-        width: 22%;
         height: auto;
-    }
-
-    .products_line > img:nth-of-type(4), .products_line > img:last-of-type {
-        margin-right: 15px;
     }
 
     .team_members > img {
@@ -787,6 +842,14 @@ textarea {
     }
 
     @media screen and (max-width: 800px) {
+        .messagepop {
+            display: none;
+            width: 100%;
+            left: 0;
+            top: 0;
+            height: 100%;
+        }
+
         .products_info {
             width: 90%;
         }
@@ -841,12 +904,6 @@ textarea {
             margin: 30px 0;
         }
 
-        .nav_products_item {
-            display: block;
-            width: 100%;
-            line-height: 30px;
-        }
-
         .footer > .content {
             flex-flow: column wrap;
         }
@@ -889,6 +946,26 @@ textarea {
             line-height: 45px;
         }
 
+        .messagepop {
+            display: none;
+            height: 100%;
+        }
+
+        #new_message p:first-of-type {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        #new_message .name, #new_message .touch_mail {
+            width: 100%;
+        }
+
+        #new_message textarea {
+            height: 200px;
+            margin: 10px 0;
+        }
+
         .inner_products {
             margin-left: 0;
         }
@@ -900,13 +977,6 @@ textarea {
         .products_line {
             display: block;
             width: 96%;
-        }
-
-        .products_line > img {
-            display: block;
-            width: 70%;
-            height: auto;
-            margin: 1% auto;
         }
 
         .products_line > img:nth-of-type(4), .products_line > img:last-of-type {
@@ -960,40 +1030,22 @@ textarea {
     }
 }
 
-/*popup---------------------------------------------------------------------*/
-button.selected {
-    z-index: 100;
-}
+/*upstairs*---------------------------------------------------------*/
 
-.messagepop {
-    background-color: #fff;
-    cursor: default;
-    display: none;
-    text-align: left;
-    z-index: 50;
-    padding: 25px 25px 20px;
-    width: auto;
-    top: 7%;
-    left: 21%;
+.up_btn {
+    font-size: 50px;
     position: fixed;
+    right: 10px;
+    bottom: 24px;
+    opacity: 0.65;
+    transition: all linear .2s;
+    color: #757369;
 }
 
-.messagepop .submit_btn {
-    width: 100%;
-
-}
-
-.close {
-    position: absolute;
-    top: 3px;
-    right: 5px;
-    color: #C4C0B1;
-    font-size: 30px;
-    background: transparent;
-
-}
-
-.close:hover {
+.up_btn:hover {
     color: #ff2d2d;
     cursor: pointer;
 }
+
+
+
